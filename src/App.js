@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Chats from './components/Chats';
+import InputBox from './components/InputBox';
 
 function App() {
 
@@ -70,12 +71,12 @@ function App() {
   return (
     <>
         {mode === "offline" && <div className='offline'>You are in offline mode</div>}
-      <Header from={from} to={to} name={tripName}/>
+      <Header from={from} to={to} name={tripName} mode={mode}/>
 
       {
-        data[0] &&  <Chats chatsData={data} />
+        data[0] ?  <Chats chatsData={data}  /> : <div className='no-data'><p>Please wait...</p></div>
       }
-      
+      <InputBox />
     </>
   );
 }

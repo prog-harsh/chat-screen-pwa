@@ -1,6 +1,7 @@
 import React from 'react'
 import ChatSent from './ChatSent'
 import ChatRecived from './ChatRecived'
+import "./Chat.css";
 
 
 const Chats = ({chatsData}) => {

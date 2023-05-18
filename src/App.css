@@ -5,4 +5,11 @@
   text-align: center;
   align-self: flex-start;
   height: auto;
+  position: sticky;
+  top: 0px;
+}
+
+.no-data{
+  height: 80vh;
+  text-align: center;
 }
