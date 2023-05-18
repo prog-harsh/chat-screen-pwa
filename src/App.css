@@ -1,0 +1,8 @@
+.offline{
+  background:  #f44336;
+  color:#900000;
+  padding: 5px;
+  text-align: center;
+  align-self: flex-start;
+  height: auto;
+}

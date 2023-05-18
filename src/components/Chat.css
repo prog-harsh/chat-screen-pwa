@@ -1,0 +1,31 @@
+.chatrecived{
+    display: flex;
+    width: 80%;
+    float: left;
+    margin: 8px;
+}
+
+.chatrecived p{
+    padding: 10px;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+    margin-left: 5px;
+    background-color: white;
+    border-radius: 0px 15px 15px 15px;
+}
+
+.chatrecived img{
+    width: 40px ;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chatsent{
+    width: 80%;
+    padding: 10px;
+    margin: 8px;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+    float: right;
+    background-color: rgb(28, 28, 218);
+    color: white;
+    border-radius: 15px 15px 0px 15px;
+}
