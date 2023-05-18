@@ -5,9 +5,14 @@ this.addEventListener("install", (event)=>{
         caches.open(cachceData).then((cache) => {
            return cache.addAll([
                 // "/static/js/bundle.js",
-                "/static/js/main.bb9c9b53.js",
-                "/static/css/main.9363e7f5.css",
+                "/favicon.ico",
+                "/logo192.png",
+                "/static/js/main.87f7c25c.js",
+                "/static/js/472.c2b6b84f.chunk.js",
+                "/static/css/main.abc2e9aa.css",
+                "/static/css/472.39d41967.chunk.css",
                 "/index.html",
+                "/manifest.json",
                 "/static/media/group.d619c56b5a9c096c6e45.png",
                 "/"
             ]);
@@ -24,8 +29,4 @@ this.addEventListener("fetch", (event)=>{
             
         )
     }
-    else{
-        return fetch(event.request);
-    }
-    
 })
