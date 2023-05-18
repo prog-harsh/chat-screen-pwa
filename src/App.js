@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { lazy, useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header';
-import Chats from './components/Chats';
 import InputBox from './components/InputBox';
+const Chats = lazy(()=> import("./components/Chats.js"))
 
 function App() {
 
@@ -12,11 +12,13 @@ function App() {
   const [to, setTo] = useState("");
   const [tripName, setTripName] = useState("");
   const [mode, setMode] = useState("online");
+  const [loading, setLoading] = useState(true);
 
 
   useEffect(()=>{
     getData().catch(err => {
      setMode("offline");
+     setLoading(false);
      let localStorageData = localStorage.getItem("data");
      setData(JSON.parse(localStorageData));
      let localStorageTripDetails = localStorage.getItem("tripDetails");
@@ -40,6 +42,7 @@ function App() {
           localStorage.setItem("data", JSON.stringify([...prev, ...resData.chats]))
           return [...prev, ...resData.chats]
         });
+        setLoading(false);
         setFrom(resData.from);
         setTo(resData.to);
         setTripName(resData.name);
@@ -74,7 +77,10 @@ function App() {
       <Header from={from} to={to} name={tripName} mode={mode}/>
 
       {
-        data[0] ?  <Chats chatsData={data}  /> : <div className='no-data'><p>Please wait...</p></div>
+        data[0] &&  <Chats chatsData={data}  />
+      }
+      {
+        loading && <div className='no-data'><p>Please wait...</p></div>
       }
       <InputBox />
     </>

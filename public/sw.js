@@ -5,13 +5,10 @@ this.addEventListener("install", (event)=>{
         caches.open(cachceData).then((cache) => {
            return cache.addAll([
                 // "/static/js/bundle.js",
-                "/favicon.ico",
-                "/logo192.png",
                 "/static/js/main.bb9c9b53.js",
                 "/static/css/main.9363e7f5.css",
-                "https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?cs=srgb&dl=pexels-fauxels-3184398.jpg&fm=jpg",
-                "/manifest.json",
                 "/index.html",
+                "/static/media/group.d619c56b5a9c096c6e45.png",
                 "/"
             ]);
         })
@@ -26,6 +23,9 @@ this.addEventListener("fetch", (event)=>{
             })
             
         )
+    }
+    else{
+        return fetch(event.request);
     }
     
 })
